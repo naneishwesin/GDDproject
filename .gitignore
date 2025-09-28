@@ -1,0 +1,32 @@
+# Unity
+/Library/
+/Temp/
+/obj/
+/Logs/
+/UserSettings/
+/Recordings/
+/ProjectSettings/boot.config
+
+# Unity Addressables
+/Assets/AddressableAssetsData/addressables_content_state.bin
+
+/Builds/
+
+# Rider
+.idea/
+
+# Visual Studio
+.vs/
+.vscode/
+
+/.vsconfig
+*.sln
+*.csproj
+
+# Certificates
+*.cert
+*.cert.meta
+*.privkey
+*.privkey.meta
+*.pfx
+*.pfx.meta
