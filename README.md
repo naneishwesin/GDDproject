@@ -1,56 +1,125 @@
 # Survival Shooter Upgraded
 
-![A screenshot of the game showing the player shooting at a Zombunny](.github/screenshot.png)
+Team: PIX  
+Team Member: Nan Ei Shwe Sin Hlaing (6530231)  
+Game Type: Single-player survival shooter
 
-This builds on the **Survival Shooter** tutorial project from Unity. It is
-provided as a part of the instructional content at AIE Seattle.
+Unity-based survival shooter built on Unity’s Survival Shooter tutorial. Educational project from the Academy of Interactive Entertainment (AIE) Seattle.
 
-The original copy of the Survival Shooter was originally available for free from
-Unity Technologies on [Unity Learn][U3D_SurvivalShooter] and licensed under
-Apache License 2.0.
+## Game Overview
 
-[U3D_SurvivalShooter]:https://learn.unity.com/project/survival-shooter-tutorial
+Genre:survival shooter (single-player)  
+Objective: Survive waves of enemies  
+Core Loop: Fight enemies, survive rounds, progress through increasing difficulty
 
-## Differences From Tutorial Project
+## Features
 
-Some differences are present when compared to the original tutorial project:
+### Core Gameplay
+- **Player System**
+  - Health: 100 HP with damage feedback
+  - Movement: WASD with mouse look
+  - Shooting: Raycast-based with muzzle flash, particles, and audio
+  - Input: Unity Input System (keyboard/mouse and gamepad)
 
-Property        | Original                           | Latest
-----------------|------------------------------------|------------------------
-Version         | Unity 5                            | Unity 20XX (see [Building](#building))
-Render Pipeline | Built-in (BIRP)                    | Universal (URP)
-Lighting        | Face Light Only                    | Flashlight + Face Light
-Global Lighting | Single Directional Light + Ambient | Ambient Only
+- **Enemy System**
+  - Types: Zombunny, Zombear, Hellephant
+  - AI: NavMesh pathfinding with chase and attack behaviors
+  - Spawning: Wave-based with increasing difficulty
 
-> :question: **Why use the Universal Render Pipeline?**  
-> The Survival Shooter project as originally released for Unity 4.6 was not
-> designed as an ultra high-fidelity experience.
->
-> To target scalability, the Universal Render Pipeline was chosen for its modest
-> feature-set and resource load.
+### New Upgrades
 
-## Building
+#### Health & Speed Boost System
+- **Health Boost**: +10% per round (configurable)
+- **Speed Boost**: +5% per round (configurable)
+- **Max Caps**: 300% health, 200% speed (configurable)
+- **Auto-Application**: Boosts apply on round start
+- **Healing**: Player heals when health increases
 
-This project is tested with **Unity 2020.3.5f1** but may work with newer versions.
+#### Enhanced Player Systems
+- **Dynamic Max Health**: Adjustable maximum health
+- **Heal Method**: Restore health programmatically
+- **Health Percentage**: Calculate current health percentage
+- **Events**: Health change notifications
 
-After cloning this project, add the working directory to Unity Hub and open the
-project. If the corresponding version is not installed on your machine, accept
-the prompt from Unity Hub at the bottom of your screen to proceed with
-installation.
+#### UI Enhancements
+- **ProgressionUI**: Shows boost percentages
+- **Animated Notifications**: Boost announcements
+- **Color-Coded Icons**: Visual feedback
+- **Scaling Display**: Icons scale with boost level
 
-Once installation is complete, retry opening the project from Unity Hub.
+## How It Works
+
+### Round Progression
+- **Round 1**: Base stats (100 HP, 6 speed)
+- **Round 2**: +10% health, +5% speed
+- **Round 3**: +20% health, +10% speed
+- **Round 4**: +30% health, +15% speed
+- **And so on...**
+
+### Technical Implementation
+- **PlayerProgression Component**: Manages stat scaling
+- **PlayerHealth Enhancement**: Dynamic health system
+- **GameStateManager Integration**: Round-based progression
+- **Event System**: UI updates and notifications
+
+## Controls
+
+- **WASD**: Move
+- **Mouse**: Look
+- **Left Click**: Shoot
+- **ESC**: Pause/Menu
+
+
+## Requirements
+
+- **Unity 2022.3+**
+- **Universal Render Pipeline (URP)**
+- **Input System Package**
+- **TextMesh Pro**
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/naneishwesin/GDDproject.git
+   ```
+
+2. Open in Unity 2022.3+
+3. Let Unity import assets
+4. Open `Assets/SurvivalShooter/Scenes/Menu.unity`
+5. Press Play
+
+## Configuration
+
+### Boost Settings
+Edit `PlayerProgression.cs` to adjust:
+- `healthBoostPerRound`: Health increase per round (default: 0.1 = 10%)
+- `speedBoostPerRound`: Speed increase per round (default: 0.05 = 5%)
+- `maxHealthMultiplier`: Maximum health cap (default: 3.0 = 300%)
+- `maxSpeedMultiplier`: Maximum speed cap (default: 2.0 = 200%)
+
+## Credits
+
+- **Base Game**: Unity Technologies (Survival Shooter Tutorial)
+- **Educational Institution**: Academy of Interactive Entertainment (AIE) Seattle
+- **Character Assets**: KayKit
+- **UI Assets**: KenneyNL
+- **Fonts**: Oswald, Rubik, LuckiestGuy
 
 ## License
 
-Copyright (c) 2018-2022 Academy of Interactive Entertainment
+This project is for educational purposes. See individual asset licenses for specific terms.
 
-Unless stated otherwise, the contents of this project are licensed under the MIT
-License.
+## Future Enhancements
 
-Check the [LICENSE](LICENSE) for more details.
+- Multiple weapon types
+- Boss enemies with unique mechanics
+- Player progression system
+- Power-ups and collectibles
+- Multiple difficulty modes
+- Achievement system
+- Leaderboards
 
-## Thirdparty
+---
 
-"Survival Shooter" by Unity Technologies is licensed under Apache License 2.0.
-
-Full notices for all third-party works are enumerated in the [THIRDPARTY](THIRDPARTY) file.
+**Repository**: [https://github.com/naneishwesin/GDDproject.git](https://github.com/naneishwesin/GDDproject.git)
